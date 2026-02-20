@@ -10,6 +10,7 @@ const candidateSlice = createSlice({
     apply: {
       loading: false,
       error: null,
+      errorJobId: null,
       successJobId: null,
     },
   },
@@ -31,6 +32,7 @@ const candidateSlice = createSlice({
       .addCase(submitApplication.pending, (state) => {
         state.apply.loading = true
         state.apply.error = null
+        state.apply.errorJobId = null
         state.apply.successJobId = null
       })
       .addCase(submitApplication.fulfilled, (state, action) => {
@@ -40,6 +42,7 @@ const candidateSlice = createSlice({
       .addCase(submitApplication.rejected, (state, action) => {
         state.apply.loading = false
         state.apply.error = action.payload
+        state.apply.errorJobId = action.meta.arg.jobId
       })
   },
 })

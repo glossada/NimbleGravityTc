@@ -90,6 +90,14 @@ body {
   border-color: #4f46e5;
 }
 
+.repo-input--error {
+  border-color: #dc2626;
+}
+
+.repo-input--error:focus {
+  border-color: #dc2626;
+}
+
 .submit-btn {
   padding: 0.6rem 1.4rem;
   background-color: #4f46e5;
